@@ -1,0 +1,554 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
+
+body {
+  font-family: "Cairo", sans-serif;
+  margin: 0;
+  padding: 0;
+  /* For RTL layout */
+}
+
+header {
+  background-color: #f8f8f8;
+}
+
+.top-bar {
+  background-color: #1c4e80;
+  color: #fff;
+  padding: 5px 0;
+}
+
+.top-bar .container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px;
+  gap: 10px;
+  align-items: center;
+}
+
+.top-bar a {
+  color: #fff;
+  margin-left: 15px;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.top-bar a:hover {
+  color: #ef6a89;
+}
+
+nav {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+  direction: rtl;
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.logo img {
+  max-width: 150px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 10px;
+}
+
+.menu li {
+  margin-left: 20px;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #1c4e80;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+  font-size: large;
+}
+
+.menu li a:hover,
+.menu li.active a {
+  color: #ff6384;
+}
+
+.menu li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 50%;
+  background-color: #ff6384;
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.menu li a:hover::after,
+.menu li.active a::after {
+  width: 100%;
+  left: 0;
+}
+
+.actions {
+  display: flex;
+}
+
+.action-btn {
+  display: block;
+  margin-left: 10px;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 3px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.action-btn:first-child {
+  background-color: #4bc0c0;
+}
+
+.action-btn:nth-child(2) {
+  background-color: #ff6384;
+}
+
+.action-btn:hover {
+  opacity: 0.8;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu-toggle:hover {
+  transform: rotate(90deg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+  .menu,
+  .actions {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .menu.active,
+  .actions.active {
+    display: flex;
+  }
+
+  .menu li {
+    margin: 10px 0;
+  }
+
+  .actions {
+    flex-direction: column;
+    margin-top: 10px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .actions .action-btn {
+    margin: 5px 0;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+.floating-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 1000;
+}
+
+.floating-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.floating-btn img {
+  width: 50%;
+  height: 50%;
+}
+
+.floating-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.stethoscope-btn {
+  background-color: #4bc0c0;
+}
+
+.whatsapp-btn {
+  background-color: #25d366;
+}
+
+/* Scroll to Top Button */
+#scrollToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 100;
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: rgb(146, 64, 64);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Adjust for different screen sizes */
+@media (max-width: 768px) {
+  .floating-buttons {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .floating-btn {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.containers {
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  margin: 30px auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.containers header {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 500;
+  text-align: center;
+}
+
+.containers .form {
+  margin-top: 30px;
+}
+
+.form .input-box {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.input-box label {
+  color: #333;
+}
+
+.form :where(.input-box input, .select-box) {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  color: #707070;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 15px;
+}
+
+.input-box input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.form .column {
+  display: flex;
+  column-gap: 15px;
+}
+
+.form .gender-box {
+  margin-top: 20px;
+}
+
+.gender-box h3 {
+  color: #333;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.form :where(.gender-option, .gender) {
+  display: flex;
+  align-items: center;
+  column-gap: 50px;
+  flex-wrap: wrap;
+}
+
+.form .gender {
+  column-gap: 5px;
+}
+
+.gender input {
+  accent-color: rgb(130, 106, 251);
+}
+
+.form :where(.gender input, .gender label) {
+  cursor: pointer;
+}
+
+.gender label {
+  color: #707070;
+}
+
+.address :where(input, .select-box) {
+  margin-top: 15px;
+}
+
+.select-box select {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  color: #707070;
+  font-size: 1rem;
+}
+
+.form button {
+  height: 55px;
+  width: 100%;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: rgb(130, 106, 251);
+}
+
+.form button:hover {
+  background: rgb(88, 56, 250);
+}
+
+/* Responsive for tablets and smaller devices */
+@media screen and (max-width: 768px) {
+  .containers {
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  .form .column {
+    flex-direction: column;
+    row-gap: 15px;
+  }
+
+  .form .gender-option {
+    row-gap: 15px;
+  }
+
+  .form :where(.input-box input, .select-box) {
+    font-size: 0.9rem;
+  }
+}
+
+/* Responsive for mobile devices */
+@media screen and (max-width: 500px) {
+  .containers {
+    padding: 15px;
+    margin: 15px auto;
+    max-width: 290px;
+  }
+
+  .containers header {
+    font-size: 1.2rem;
+  }
+
+  .form .column {
+    flex-wrap: wrap;
+    row-gap: 15px;
+  }
+
+  .form :where(.gender-option, .gender) {
+    row-gap: 15px;
+  }
+
+  .form .input-box {
+    margin-top: 15px;
+  }
+
+  .form :where(.input-box input, .select-box) {
+    height: 45px;
+    font-size: 0.9rem;
+  }
+
+  .gender-box h3 {
+    font-size: 0.9rem;
+  }
+
+  .form button {
+    height: 50px;
+    font-size: 0.9rem;
+  }
+}
+
+.footer {
+  background-color: #1c4e80;
+  padding: 50px 20px;
+  /* Reduced padding for better spacing */
+  direction: rtl;
+}
+
+.footer-col {
+  width: 100%;
+  /* Make columns full-width by default for mobile */
+  padding: 0 10px;
+  /* Reduced padding for better spacing */
+  margin-bottom: 30px;
+  /* Add spacing between columns */
+  box-sizing: border-box;
+  /* Ensure padding and border are included in the width */
+}
+
+.footer-col h4 {
+  font-size: 18px;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+  /* Reduced margin for better spacing */
+  font-weight: 500;
+  position: relative;
+}
+
+.footer-col h4::before {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  /* Adjusted for better spacing */
+  background-color: #e91e63;
+  height: 2px;
+  width: 50px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  font-size: 16px;
+  color: #bbbbbb;
+  text-decoration: none;
+  transition: color 0.3s, padding-left 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: #ffffff;
+  padding-left: 8px;
+}
+
+.footer-col .social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  /* Add gap between social icons */
+}
+
+.footer-col .social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: #ffffff;
+  transition: color 0.5s, background-color 0.5s;
+  text-decoration: none;
+}
+
+.footer-col .social-links a:hover {
+  color: #24262b;
+  background-color: #ffffff;
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+  .footer-col {
+    width: 50%;
+    /* Two columns layout for tablets */
+  }
+}
+
+@media (min-width: 992px) {
+  .footer-col {
+    width: 25%;
+    /* Four columns layout for larger screens */
+  }
+}
+
+.footer-copyright {
+  background-color: #1c4e80;
+  color: #fff;
+  padding: 15px 30px;
+  text-align: center;
+  border-top: 1px solid white;
+  direction: rtl;
+}
+
+.footer-copyright-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+}
+
+.footer-copyright-text {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.footer-copyright-link {
+  color: #fff;
+  text-decoration: none;
+}

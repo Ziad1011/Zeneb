@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/course.css">
+  <link rel="stylesheet" href="assets/fontawesome-free-6.4.2-web/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.mobiscroll.com/5.17.1/css/mobiscroll.min.css">
+  <link rel="shortcut icon" href="fav/logo.png" type="image/x-icon">
+
+
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+
+
+</head>
+
+<body>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navigation Bar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/booking.css">
+
+  </head>
+
+  <body>
+    <header>
+      <div class="top-bar">
+        <div class="container">
+          <a href="mailto:info@tadawi.me">info@Zeneb.com <i class="fa-solid fa-envelope"
+              style="padding-right: 5px;"></i></a>
+          <a href="tel:+97440414243">201010570960+<i class="fa-solid fa-phone" style="padding-right: 5px;"></i></a>
+        </div>
+      </div>
+      <nav>
+        <div class="container">
+          <div class="logo">
+            <a href="index.html"> <img src="img/logo.png" alt="">
+            </a>
+          </div>
+          <ul id="menu" class="menu">
+            <li><a href="index.html">الصفحة الرئيسية</a></li>
+            <!-- <li><a href="#">نبذة عنا</a></li> -->
+            <li><a href="courses.html">كورسات</a></li>
+            <li><a href="book.html">الكتب</a></li>
+            <!-- <li><a href="#">المدونة</a></li> -->
+            <li><a href="CallUs.html">اتصل بنا</a></li>
+            <li><a href="signup.html">تسجيل الدخول</a></li>
+
+          </ul>
+          <div class="actions">
+            <a href="booking.html" class="action-btn">احجز الآن</a>
+
+
+          </div>
+          <div id="menu-toggle" class="menu-toggle">
+            ☰
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Floating buttons -->
+    <div class="floating-buttons">
+      <a href="booking.html" class="floating-btn stethoscope-btn">
+        <img src="img/stethoscope-medical-tool_46196.png" alt="Stethoscope Icon">
+      </a>
+      <a href="https://wa.me/+201010570960" target="_blank" class="floating-btn whatsapp-btn">
+        <img src="img/whatsapp_134937.png" alt="WhatsApp Icon">
+      </a>
+    </div>
+    <div class="testimonial-slider">
+      <!-- Your testimonials here -->
+    </div>
+    <button id="scrollToTopBtn"><i class="fa-solid fa-arrow-up"></i></button>
+
+
+    <div class="all">
+      <form id="calendar-form" action="" method="GET">
+        <div class="form-group">
+          <label for="username">اسم المستخدم:</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+          <label for="email">الايميل:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">رقم التليفون:</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+          <label for="gender">الجنس:</label>
+          <select id="gender" name="gender" required>
+            <option value="male">ذكر</option>
+            <option value="female">انثي</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="session-type">تحديد نوع الجلسة:</label>
+          <select id="session-type" name="session-type" required>
+            <option value="consultation">استشارة</option>
+            <option value="session">جلسة</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="age">السن:</label>
+          <input type="number" id="age" name="age" required>
+        </div>
+
+
+        <div class="form-group">
+          <label for="hour">تحديد الساعة:</label>
+          <select id="hour" name="hour" required>
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+          </select>
+
+          <label for="ampm">تحديد الوقت:</label>
+          <select id="ampm" name="ampm" required>
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+          </select>
+        </div>
+
+        <!-- Hidden field to store the combined time -->
+        <input type="hidden" id="time" name="time" required>
+
+        <div class="form-group">
+          <label for="age">ملاحظات:</label>
+          <textarea name="notes" id="notes"></textarea>
+        </div>
+
+        <input type="hidden" name="selectedDate" id="selectedDate" value="">
+
+
+
+        <div class="form-group">
+          <label for="time">اختار ميعاد</label>
+
+          <!-- <div data-calendar class="book">
+            <div id="calendar-wrapper"
+              class="calendar-wrapper w-[700px] mx-auto mt-5 rounded-[18px] shadow-custom p-[18px] border border-secondary calendar-container">
+              <div id="calendarList1" class="calendarList">
+                <div class="calendar-header pt-3 px-7">
+                  <div class="calendar-navigation">
+                    <span id="calendar-prev" class="material-symbols-rounded cursor-pointer">&lt;</span>
+                    <p class="calendar-current-date"></p>
+                    <span id="calendar-next" class="material-symbols-rounded cursor-pointer">&gt;</span>
+                  </div>
+                </div>
+                <div class="calendar-body">
+                  <ul class="calendar-weekdays">
+                    <li>Sun</li>
+                    <li>Mon</li>
+                    <li>Tue</li>
+                    <li>Wed</li>
+                    <li>Thu</li>
+                    <li>Fri</li>
+                    <li>Sat</li>
+                  </ul>
+                  <ul class="calendar-dates" style="display: flex;
+    justify-content: flex-start;"></ul>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+          <div class="wrapper">
+            <div class="container">
+              <form class="custom-date-pick-wrapper">
+
+
+                <div class="custom-date-pick-wrapper__item">
+                  <!-- <div class="custom-date-pick-wrapper__item__label">to</div> -->
+                  <div class="custom-date-pick-wrapper__item__input real endDate">
+                    <input type="date" name="realDPX-max" placeholder="Choice end date">
+                  </div>
+                </div>
+
+              </form>
+            </div>
+          </div>
+
+
+
+
+          <button type="submit">حفظ</button>
+      </form>
+
+    </div>
+
+    </div>
+
+
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row" style="display: flex; flex-direction: row;">
+
+          <div class="footer-col">
+            <h4>المساعدة</h4>
+            <ul>
+              <li><a href="#">الأسئلة الشائعة</a></li>
+              <li><a href="#">الشحن</a></li>
+              <li><a href="#">الإرجاع</a></li>
+              <li><a href="#">حالة الطلب</a></li>
+              <li><a href="#">خيارات الدفع</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>التسوق عبر الإنترنت</h4>
+            <ul>
+              <li><a href="courses.html">الكورسات</a></li>
+              <li><a href="book.html">الكتب</a></li>
+
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>تابعنا</h4>
+            <div class="social-links">
+              <a href="https://www.facebook.com/ZeinabAlshabrawyAbdelRahman2021?mibextid=LQQJ4d"><i
+                  class="fab fa-facebook-f"></i></a>
+              <a href="https://youtube.com/@zainababdelrahman"><i class="fab fa-youtube"></i></a>
+              <a href="https://www.instagram.com/gorashyh?igsh=ODZtaDA4NnltODEw&utm_source=qr"><i
+                  class="fab fa-instagram"></i></a>
+              <a href="https://snapchat.com/t/RVVXCanH"><i class="fa-brands fa-snapchat"></i></a>
+              <a href="https://www.tiktok.com/@zeinababdelrahman2022?_t=8n8KYzarcKT&_r=1"><i
+                  class="fa-brands fa-tiktok"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>طرق الدفع</h4>
+            <div class="social-links">
+              <a href="#"><i class="fa-brands fa-cc-visa"></i></a>
+              <a href="#"><i class="fa-brands fa-cc-mastercard"></i></a>
+              <a href="#"><i class="fa-solid fa-money-bill-wave"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="footer-copyright">
+      <div class="footer-copyright-wrapper">
+        <p class="footer-copyright-text">
+          <a class="footer-copyright-link" href="https://www.facebook.com/fikrahshow1" target="_self"> ©2020. |
+            Designed By: Fikra Show. | All
+            rights
+            reserved. </a>
+        </p>
+      </div>
+    </div>
+
+
+
+
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+    <script src="./assets/jquery-3.7.1.min.js"></script>
+    <script src="./assets/popper.min.js"></script>
+    <script src="./js/course.js"></script>
+    <script src="./js/booking.js"></script>
+  </body>
+
+</html>
